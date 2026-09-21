@@ -92,6 +92,30 @@ assumes a renovation-quality exit the neighbourhood cannot support.
 - Absolute dollar error is reported next to percentage error, because percentages flatter expensive homes
   arithmetically: the $350k+ segment has the *best* percentage error and the *second worst* dollar error.
 
+## Is 16% any good?
+
+No — not on its own. It is worth being blunt about that, because the segmented table above is the point
+of the project and it only means something next to a benchmark.
+
+Zillow publishes a median error of roughly **1.7–1.9% for on-market homes and about 7% for off-market
+homes** ([Zillow's published accuracy](https://www.zillow.com/z/zestimate/)). This model's best segments
+sit at 16–18%. That is materially worse, and some of the gap is simply a harder question:
+
+- An AVM estimates what a house is worth **today, as it stands**. This predicts what a house will sell for
+  **after an unknown renovation, six to twenty-four months out**.
+- The renovation scope is not in public records. Two buyers paying the same price produce different exits
+  depending on what they spend, and nothing in the data distinguishes them.
+- Commercial AVMs train on listing data: photos, condition notes, list-price history. This has assessor
+  records and transfer declarations.
+
+But the harder question does not make the number good enough. On a $300k exit, 16% is roughly $48k, and a
+renovation margin is often $40–60k. **The point estimate is directionally useful and not decision-grade.**
+
+That is why the work went into the error distribution rather than the headline: a single accuracy figure
+would imply uniform reliability. Segmented, the tool can say "in this segment expect about 16%" and, in
+the segments where it cannot, decline to answer and say why. A valuation that knows where it fails is
+more useful than one that is confidently wrong in the places that matter most.
+
 ## What I would tell a reviewer
 
 - **The validation is the project.** The scoring model is ordinary; knowing where it breaks, and refusing
